@@ -967,12 +967,12 @@ Functions.MatchMaking = function()
 
     task.wait(1)
 
-    local a, b = pcall(table.find, (SpecialMap, MapName))
+    local a, b = pcall(table.find, SpecialMap, MapName)
 
     if a and b then
         return
     end
-    
+
     local TroopsOwned = GetTowersInfo()
     local CanChangeMap = GetGameState():GetAttribute("IsPrivateServer") or game:GetService("MarketplaceService"):UserOwnsGamePassAsync(LocalPlayer.UserId, 10518590)
     local CurrentMapList = {}
